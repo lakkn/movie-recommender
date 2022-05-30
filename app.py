@@ -11,8 +11,8 @@ def index():
     title = request.form["title"]
     data = placeholder(title)
     print(data)
-    for i in range(0,5):
-      titles.append(data.iloc[i]["polished_title"])
+    for i in range(0,data.shape[0]):
+      titles.append(data.iloc[i]["title"])
     print(titles)
   return render_template('index.html', suggestions=titles)
 
