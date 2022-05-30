@@ -45,4 +45,5 @@ def placeholder(title):
   vectorizer = TfidfVectorizer(ngram_range=(1,2))
   tfidf = vectorizer.fit_transform(movies["polished_title"])
   searched = search(title,tfidf,vectorizer,movies).head(1)
-  return recommend(searched[0]['movieId'],ratings,movies)
+  print(searched)
+  return recommend(searched.iloc[0]['movieId'],ratings,movies)
